@@ -1,0 +1,32 @@
+TortoiseGit : 
+寫完一小部分要Commit : Git Commit -> branch的名稱。
+看上傳到Commit的程式碼 : TortoiseGit -> Show dialog。
+看修改的過程的程式碼(從上次Commit到這次Commit) : TortoiseGit -> Diff。
+切換Branch : 在ps4mobile資料夾按滑鼠右鍵 -> TortoiseGit -> Switch/Checkout...
+併回Branch : 登入GitLab，按Merge Requests -> New Merge Request，左邊的Select branch選自己開發完的branch，右邊的branch選要併回的branch(可能是development(大部分)或master)。
+
+要下載(Pull)程式碼 : 
+1.下載程式碼 : 要在Git Commit -> "development"中按滑鼠右鍵 -> TortoiseGit -> Pull(如果檔案有改過就要先按Revert)。
+2.如果編譯不過就重新Clone : Git Sync -> Pull。
+3.開新的Branch : 在ps4mobile資料夾按滑鼠右鍵 -> TortoiseGit -> Create Branch(選HEAD) -> 輸入Branch的Name(story名稱(Sprint Backlog Item#後面的數字)_描述)，要把Switch to new branch打勾，選Switch/Checkout(切換到自己的branch開發)按OK。
+4.要刪除Branch : 在ps4mobile資料夾按滑鼠右鍵 -> TortoiseGit -> Switch/Checkout... -> ...的按鈕(選heads) -> 選要刪除的branch按滑鼠右鍵 -> Delete branch。
+程式碼有改動要重新Pull : 
+按滑鼠右鍵 -> TortoiseGit -> Revert... -> Clean up...。 
+
+要上傳(Push)程式碼 : 
+1.在ps4mobile資料夾按滑鼠右鍵 -> TortoiseGit -> Show log看To是否為最新的日期要先Refresh，之後在TortoiseGit -> Pull再TortoiseGit -> Create Branch，把Switch to New branch打勾。
+2.先TortoiseGit -> Git Commit(Message寫修改什麼按ok)，TortoiseGit -> Push -> Ok。
+看上傳的檔案 : 登入GitLab -> Commits。
+看上傳到Commit的程式碼 : TortoiseGit -> Show dialog。
+看修改的過程的程式碼(從上次Commit到這次Commit) : TortoiseGit -> Diff。
+
+GitHab流程 : 登入GitHab -> 選Http複製右邊的網址 -> 在要上傳的檔案資料夾中按滑鼠右鍵 -> Git Clone(舊的版本下載下來) -> OK -> 在要上傳的檔案資料夾中按滑鼠右鍵 -> Git Commit(新的版本上傳雲端) -> TortoiseGit -> Push -> OK。
+
+把GitHub上的專案變成自己的專案 : 
+Git Clone(下載GitHub上的專案到自己的電腦) -> 顯示隱藏的資料夾 -> 刪除.git資料夾 -> 在Github網頁端New repository -> 命名Repository name(新專案名稱) -> Git Clone新專案資料夾 -> 把原本GitHub上的專案不複製.git資料夾其他複製到新專案的資料夾中 -> Push。
+
+刪除Git commit in Github(在含有git專案的資料夾中按住shift鍵與滑鼠左鍵再選在此處開啟命令視窗(W)) : 
+git reset --hard <commit_id>(<commit_id>在圖片上)
+git push -f origin HEAD^:master
+
+
