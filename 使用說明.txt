@@ -20,13 +20,14 @@ TortoiseGit :
 看上傳到Commit的程式碼 : TortoiseGit -> Show dialog。
 看修改的過程的程式碼(從上次Commit到這次Commit) : TortoiseGit -> Diff。
 
-GitHab流程 : 登入GitHab -> 選Http複製右邊的網址 -> 在要上傳的檔案資料夾中按滑鼠右鍵 -> Git Clone(舊的版本下載下來) -> OK -> 在要上傳的檔案資料夾中按滑鼠右鍵 -> Git Commit(新的版本上傳雲端) -> TortoiseGit -> Push -> OK。
+GitHab流程 : 登入GitHab -> 選Http複製右邊的網址 -> 在要上傳的檔案資料夾中按滑鼠右鍵 -> Git Clone(舊的版本下載下來) -> OK -> 在要上傳的檔案資料夾中按滑鼠右鍵 -> Git Commit(新的版本上傳雲端)[Clone下來不能使用Git Commit時，在下載的資料夾按住shift鍵與滑鼠左鍵在選在此處開啟命令視窗(W)輸入git add .] -> TortoiseGit -> Push -> OK。
 
 把GitHub上的專案變成自己的專案 : 
 Git Clone(下載GitHub上的專案到自己的電腦) -> 顯示隱藏的資料夾 -> 刪除.git資料夾 -> 在Github網頁端New repository -> 命名Repository name(新專案名稱) -> Git Clone新專案資料夾 -> 把原本GitHub上的專案不複製.git資料夾其他複製到新專案的資料夾中 -> Push。
 
-刪除Git commit in Github(在含有git專案的資料夾中按住shift鍵與滑鼠左鍵再選在此處開啟命令視窗(W)) : 
-git reset --hard <commit_id>(<commit_id>在圖片上)
-git push -f origin HEAD^:master
-
+刪除Git commit in Github(在含有git專案的資料夾中按住shift鍵與滑鼠左鍵在選在此處開啟命令視窗(W)) : 
+git reset --hard <commit_id>(回到<commit_id>的狀態，<commit_id>在圖片上)
+git cherry-pick <commit_id>(要單獨刪除中間的commit，<commit_id>選要刪除的commit上面所有的commit)
+git push -f origin HEAD^:master(強制push到Github上)
+git push origin master --force(只留下第一個Commit時強制push到Github上)
 
